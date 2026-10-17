@@ -824,9 +824,9 @@
                     <h3>Bản Máy Tính (Windows)</h3>
                     <p>Trải nghiệm chuẩn đồ họa nguyên bản JX2 PC, hỗ trợ phím tắt Auto, màn hình Full HD sắc nét, vào game 1-Click cực nhanh.</p>
                 </div>
-                <a href="https://famcuaminha.indevs.in/download/FCMA.zip" class="dl-btn" style="background: linear-gradient(135deg, #0284c7, #0369a1); border-color:#38bdf8;">
-                    <i class="fa-solid fa-download"></i> Tải Client PC (.ZIP)
-                </a>
+                <button onclick="openModal('pcModal')" class="dl-btn" style="background: linear-gradient(135deg, #0284c7, #0369a1); border-color:#38bdf8; width:100%; cursor:pointer;">
+                    <i class="fa-solid fa-download"></i> Hướng Dẫn & Mở Client JX2 PC
+                </button>
             </div>
 
             <!-- Android APK -->
@@ -837,7 +837,7 @@
                     <p>Chơi JX2 ngay trên smartphone Android qua trình giả lập Winlator kèm bộ phím ảo Kiếm Hiệp độc quyền (Analog 360, phím chiêu 1-3, F1-F2).</p>
                 </div>
                 <a href="mobile.html#android" class="dl-btn" style="background: linear-gradient(135deg, #059669, #047857); border-color:#34d399;">
-                    <i class="fa-solid fa-gamepad"></i> Hướng Dẫn & Tải Phím Ảo
+                    <i class="fa-solid fa-gamepad"></i> Hướng Dẫn & Tải Phím Ảo JX2
                 </a>
             </div>
 
@@ -846,14 +846,14 @@
                 <div>
                     <div class="dl-icon" style="color:#f59e0b;"><i class="fa-brands fa-apple"></i></div>
                     <h3>Bản iPhone / iPad (iOS)</h3>
-                    <p>Chơi mượt mà 60 FPS trực tiếp trên Safari với cụm phím ảo cảm ứng thuần điện thoại, hoặc cài qua Scarlet / Moonlight.</p>
+                    <p>Chơi JX2 mượt mà 60 FPS qua app Moonlight chính thức từ App Store hoặc truy cập Cổng Quản Trị Server JX2 trực tiếp trên Safari.</p>
                 </div>
                 <div style="display:flex; flex-direction:column; gap:8px;">
-                    <a href="https://famcuaminha.indevs.in/play/" target="_blank" class="dl-btn" style="background: linear-gradient(135deg, #10b981, #059669); border-color:#34d399;">
-                        <i class="fa-solid fa-gamepad"></i> Chơi Bản Thuần Mobile (Có Phím Ảo)
+                    <a href="http://118.69.240.5:8080/" target="_blank" class="dl-btn" style="background: linear-gradient(135deg, #10b981, #059669); border-color:#34d399;">
+                        <i class="fa-solid fa-globe"></i> Mở Cổng Máy Chủ JX2 Online (Port 8080)
                     </a>
                     <a href="mobile.html#ios" class="dl-btn" style="background: linear-gradient(135deg, #d97706, #b45309); border-color:#fbbf24;">
-                        <i class="fa-solid fa-mobile-screen"></i> Hướng Dẫn & Cài IPA Scarlet
+                        <i class="fa-solid fa-mobile-screen"></i> Hướng Dẫn Chơi 60 FPS Trên iPhone
                     </a>
                 </div>
             </div>
@@ -976,6 +976,31 @@
                 <a href="http://118.69.240.5:8080/character_management.php" target="_blank" style="color:var(--text-gold); text-decoration:underline;">
                     👉 Mở Bảng Quản Lý Nhân Vật (Port 8080)
                 </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: PC Download Guide -->
+    <div id="pcModal" class="modal-overlay">
+        <div class="modal-box" style="max-width: 550px;">
+            <span class="modal-close" onclick="closeModal('pcModal')">&times;</span>
+            <h3 class="modal-title">💻 CÀI ĐẶT CLIENT JX2 FCMA</h3>
+            <div style="color:#d1d5db; font-size:0.95rem; line-height:1.6; text-align:left;">
+                <p style="margin-bottom:12px;">Client game Võ Lâm 2 FCMA đã được cấu hình sẵn 100%, không cần cài đặt phức tạp:</p>
+                <div style="background:rgba(255,255,255,0.06); padding:14px; border-radius:10px; margin-bottom:15px; border-left:3px solid var(--primary);">
+                    <p style="color:#93c5fd; font-weight:700; margin-bottom:4px;">📁 Thư mục Client trên máy tính của bạn:</p>
+                    <code style="color:#fcd34d; word-break:break-all; font-size:0.85rem;">C:\Users\anh84\Downloads\JX2_Client_Cho_May_Khac</code>
+                </div>
+                <ul style="padding-left:20px; margin-bottom:15px; line-height:1.8;">
+                    <li><b>Bước 1:</b> Mở thư mục <code>JX2_Client_Cho_May_Khac</code> (hoặc nén gửi qua Zalo / Google Drive cho bạn bè).</li>
+                    <li><b>Bước 2:</b> Nhấp đúp chuột vào file <code>1_CLICK_CHOI_NGAY.bat</code> (hoặc <code>z.exe</code>).</li>
+                    <li><b>Bước 3:</b> Chọn máy chủ <b>Jx2 FCMA (Online Internet 118.69.240.5)</b> hoặc <b>Mạng LAN (192.168.1.64)</b> ➔ Đăng nhập và bôn tẩu giang hồ ngay!</li>
+                </ul>
+                <div style="text-align:center;">
+                    <a href="http://118.69.240.5:8080/register.php" target="_blank" class="btn-submit" style="display:inline-block; text-decoration:none; text-align:center;">
+                        ➕ Đăng Ký Tài Khoản JX2 (Tặng 9.9M Xu)
+                    </a>
+                </div>
             </div>
         </div>
     </div>
