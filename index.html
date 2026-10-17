@@ -1,1063 +1,1159 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cầm Đồ Trần Vũ | Giải Ngân Nhanh - Minh Bạch - Linh Hoạt</title>
-  <link rel="icon" type="image/png" href="logo.png">
-<link rel="apple-touch-icon" href="logo.png">
-  <meta name="description" content="Cầm Đồ Trần Vũ hỗ trợ định giá minh bạch, giải ngân trong ngày, hợp đồng rõ ràng và không phí ẩn. Liên hệ hotline 0362 168 238 để được thẩm định nhanh." />
-
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Cầm Đồ Trần Vũ | Giải Ngân Nhanh - Minh Bạch - Linh Hoạt" />
-  <meta property="og:description" content="Hỗ trợ định giá từ 20% - 50% giá trị tài sản. Không phí ẩn, bảo mật thông tin, giải ngân trong ngày." />
-  <meta property="og:url" content="https://camdotranvu.vn" />
-  <meta property="og:image" content="https://camdotranvu.vn/og-image.jpg" />
-
-  <!-- LocalBusiness Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Cầm Đồ Trần Vũ",
-    "description": "Dịch vụ cầm đồ minh bạch, hỗ trợ định giá và giải ngân linh hoạt.",
-    "telephone": "0362168238",
-    "email": "anh83863939@gmail.com",
-    "url": "https://camdotranvu.vn",
-    "sameAs": [
-      "https://www.facebook.com/profile.php?id=61588051783753",
-      "https://zalo.me/0362168238"
-    ],
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Địa chỉ đang cập nhật",
-      "addressLocality": "",
-      "addressRegion": "",
-      "postalCode": "",
-      "addressCountry": "VN"
-    },
-    "openingHours": "Mo-Su 08:00-20:00"
-  }
-  </script>
-
-  <style>
-    :root {
-      --primary: #0a2a66;
-      --primary-dark: #061b45;
-      --accent: #d4af37;
-      --light: #f7f9ff;
-      --text: #1f2937;
-      --muted: #6b7280;
-      --white: #ffffff;
-      --danger: #dc2626;
-      --shadow: 0 10px 30px rgba(10, 42, 102, 0.12);
-      --radius: 14px;
-    }
-
-    * { box-sizing: border-box; }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      color: var(--text);
-      background: var(--white);
-      line-height: 1.6;
-    }
-
-    img { max-width: 100%; }
-
-    .container {
-      width: min(1120px, 92%);
-      margin: 0 auto;
-    }
-
-    section {
-      padding: 72px 0;
-    }
-
-    h1, h2, h3 {
-      margin: 0 0 12px;
-      line-height: 1.3;
-    }
-
-    h2 {
-      font-size: clamp(1.6rem, 2.5vw, 2.2rem);
-      color: var(--primary-dark);
-      text-align: center;
-      margin-bottom: 14px;
-    }
-
-    .section-subtitle {
-      text-align: center;
-      color: var(--muted);
-      margin: 0 auto 34px;
-      max-width: 760px;
-    }
-
-    .card {
-      background: var(--white);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 24px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      border: 0;
-      border-radius: 10px;
-      font-weight: 700;
-      text-decoration: none;
-      padding: 12px 20px;
-      cursor: pointer;
-      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
-    }
-
-    .btn:hover { transform: translateY(-2px); }
-
-    .btn-primary {
-      background: var(--accent);
-      color: #2a2100;
-      box-shadow: 0 10px 20px rgba(212, 175, 55, .28);
-    }
-
-    .btn-secondary {
-      background: rgba(255, 255, 255, .1);
-      color: var(--white);
-      border: 1px solid rgba(255, 255, 255, .45);
-    }
-
-    /* Header */
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(6, 27, 69, 0.95);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid rgba(255, 255, 255, .08);
-    }
-
-    .nav-wrap {
-      min-height: 70px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
-    }
-
-    .brand {
-      color: var(--white);
-      text-decoration: none;
-      font-weight: 800;
-      letter-spacing: .2px;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .brand-logo {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 2px solid rgba(255, 255, 255, .35);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, .22);
-    }
-
-    .brand-text {
-      display: inline-block;
-    }
-
-    nav {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-    }
-
-    nav a {
-      color: #e5e7eb;
-      text-decoration: none;
-      font-size: .95rem;
-    }
-
-    nav a:hover { color: var(--accent); }
-
-    /* Hero */
-    .hero {
-      background: linear-gradient(130deg, #061b45 10%, #0a2a66 58%, #123d8f 100%);
-      color: var(--white);
-      padding-top: 84px;
-      padding-bottom: 84px;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.12fr .88fr;
-      gap: 28px;
-      align-items: center;
-    }
-
-    .hero h1 {
-      font-size: clamp(2rem, 4.4vw, 3rem);
-      margin-bottom: 10px;
-    }
-
-    .hero p {
-      color: #dbe7ff;
-      margin-top: 0;
-    }
-
-    .badge-list {
-      margin: 22px 0;
-      padding: 0;
-      list-style: none;
-      display: grid;
-      grid-template-columns: repeat(2, minmax(140px, 1fr));
-      gap: 10px 14px;
-    }
-
-    .badge-list li {
-      background: rgba(255, 255, 255, .08);
-      border: 1px solid rgba(255, 255, 255, .18);
-      border-radius: 10px;
-      padding: 9px 11px;
-      font-size: .95rem;
-    }
-
-    .hero-cta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .hero-side {
-      background: rgba(255, 255, 255, .08);
-      border: 1px solid rgba(255, 255, 255, .2);
-      border-radius: var(--radius);
-      padding: 22px;
-    }
-
-    .hero-side h3 { color: #fff4c4; }
-
-    .hero-side p {
-      margin: 6px 0;
-      color: #ebf1ff;
-    }
-
-    .hero-side a { color: #ffe388; }
-
-    /* Tabs */
-    .tabs {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin-bottom: 20px;
-    }
-
-    .tab-btn {
-      border: 1px solid #cbd5e1;
-      background: #f8fafc;
-      color: #0f172a;
-      border-radius: 999px;
-      padding: 9px 16px;
-      cursor: pointer;
-      font-weight: 600;
-    }
-
-    .tab-btn.active {
-      background: var(--primary);
-      color: var(--white);
-      border-color: var(--primary);
-    }
-
-    .tab-panel {
-      display: none;
-    }
-
-    .tab-panel.active { display: block; }
-
-    .example-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(220px, 1fr));
-      gap: 14px;
-      margin-top: 14px;
-    }
-
-    .example-item {
-      border: 1px solid #dbe4f5;
-      border-radius: 12px;
-      padding: 16px;
-      background: #fbfdff;
-    }
-
-    .tiny-note {
-      color: var(--muted);
-      font-size: .9rem;
-      margin-top: 12px;
-      text-align: center;
-    }
-
-    /* Calculator */
-    .calc-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
-      align-items: start;
-    }
-
-    label {
-      display: block;
-      font-weight: 600;
-      margin-bottom: 6px;
-      color: #111827;
-    }
-
-    input, select, textarea {
-      width: 100%;
-      border: 1px solid #cfd8e3;
-      border-radius: 10px;
-      padding: 11px 12px;
-      font: inherit;
-      outline: none;
-      transition: border .2s ease;
-      background: #fff;
-    }
-
-    input:focus, select:focus, textarea:focus {
-      border-color: var(--primary);
-    }
-
-    .field-group { margin-bottom: 14px; }
-
-    .result-box {
-      background: linear-gradient(145deg, #091f50 2%, #0e337d 100%);
-      color: #eef4ff;
-      border-radius: var(--radius);
-      padding: 22px;
-      height: 100%;
-    }
-
-    .result-box p {
-      margin: 12px 0;
-      display: flex;
-      justify-content: space-between;
-      gap: 10px;
-      border-bottom: 1px dashed rgba(255, 255, 255, .22);
-      padding-bottom: 10px;
-    }
-
-    .result-box strong { color: #fff7cf; }
-
-    /* Compare */
-    .compare-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
-    }
-
-    .compare-col ul {
-      margin: 0;
-      padding-left: 18px;
-    }
-
-    .compare-col li { margin: 9px 0; }
-
-    .good { color: #166534; }
-    .bad { color: var(--danger); }
-
-    /* Docs + utilities */
-    .docs-grid,
-    .utility-grid,
-    .steps-grid {
-      display: grid;
-      gap: 14px;
-    }
-
-    .docs-grid { grid-template-columns: repeat(2, 1fr); }
-    .utility-grid { grid-template-columns: repeat(3, 1fr); }
-    .steps-grid { grid-template-columns: repeat(3, 1fr); }
-
-    .chip {
-      display: inline-block;
-      background: #ecf1ff;
-      color: var(--primary-dark);
-      border-radius: 999px;
-      padding: 5px 11px;
-      font-size: .8rem;
-      font-weight: 700;
-      margin-bottom: 8px;
-    }
-
-    /* Form */
-    .form-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-    }
-
-    .form-grid .full { grid-column: 1 / -1; }
-
-    .consent {
-      display: flex;
-      align-items: start;
-      gap: 10px;
-      font-size: .92rem;
-      color: #374151;
-    }
-
-    .consent input {
-      width: auto;
-      margin-top: 4px;
-    }
-
-    .success-msg {
-      display: none;
-      margin-top: 12px;
-      border: 1px solid #86efac;
-      background: #f0fdf4;
-      color: #166534;
-      border-radius: 10px;
-      padding: 10px 12px;
-    }
-
-    /* Contact */
-    .contact-links {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 10px;
-      margin-top: 18px;
-    }
-
-    .contact-links a {
-      text-decoration: none;
-      color: var(--primary-dark);
-      background: #edf2ff;
-      border-radius: 10px;
-      padding: 11px;
-      font-weight: 600;
-      border: 1px solid #d6e1ff;
-    }
-
-    footer {
-      background: #061b45;
-      color: #dbe7ff;
-      padding: 46px 0;
-    }
-
-    footer a { color: #ffe388; }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap: 16px;
-    }
-
-    .map-placeholder {
-      min-height: 180px;
-      border: 1px dashed rgba(255,255,255,.5);
-      border-radius: var(--radius);
-      display: grid;
-      place-items: center;
-      color: #bfd1ff;
-      text-align: center;
-      padding: 10px;
-    }
-
-    /* Floating buttons */
-    .floating-contact {
-      position: fixed;
-      right: 14px;
-      bottom: 16px;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      z-index: 1200;
-    }
-
-    .floating-contact a {
-      width: 46px;
-      height: 46px;
-      border-radius: 50%;
-      color: var(--white);
-      text-decoration: none;
-      display: grid;
-      place-items: center;
-      font-size: .78rem;
-      font-weight: 800;
-      box-shadow: 0 10px 20px rgba(0,0,0,.15);
-    }
-
-    .f-call { background: #16a34a; }
-    .f-zalo { background: #0284c7; }
-    .f-fb { background: #2563eb; }
-    .f-mail { background: #ef4444; }
-
-    /* Modal */
-    .modal {
-      position: fixed;
-      inset: 0;
-      background: rgba(2, 6, 23, .58);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      padding: 16px;
-      z-index: 1300;
-    }
-
-    .modal.open { display: flex; }
-
-    .modal-content {
-      width: min(460px, 100%);
-      background: var(--white);
-      border-radius: var(--radius);
-      padding: 22px;
-      position: relative;
-    }
-
-    .modal-close {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      border: 0;
-      background: #e5e7eb;
-      border-radius: 8px;
-      width: 30px;
-      height: 30px;
-      cursor: pointer;
-      font-weight: 700;
-    }
-
-    /* Scroll animation */
-    .reveal {
-      opacity: 0;
-      transform: translateY(16px);
-      transition: opacity .5s ease, transform .5s ease;
-    }
-
-    .reveal.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* Responsive */
-    @media (max-width: 980px) {
-      nav { display: none; }
-      .hero-grid,
-      .calc-grid,
-      .compare-grid,
-      .docs-grid,
-      .footer-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .utility-grid { grid-template-columns: repeat(2, 1fr); }
-      .steps-grid { grid-template-columns: 1fr; }
-      .contact-links { grid-template-columns: 1fr; }
-    }
-
-    @media (max-width: 640px) {
-      section { padding: 56px 0; }
-      .badge-list { grid-template-columns: 1fr; }
-      .example-grid,
-      .form-grid,
-      .utility-grid {
-        grid-template-columns: 1fr;
-      }
-      .floating-contact { right: 10px; bottom: 10px; }
-      .floating-contact a { width: 44px; height: 44px; font-size: .72rem; }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JX2 FCMA - Cổng Game Võ Lâm Truyền Kỳ 2 Chính Thức</title>
+    <meta name="description" content="Trang chủ chính thức JX2 FCMA - Võ Lâm Truyền Kỳ 2 Private Server Chuẩn Cày Cuốc 2026. Hỗ trợ Windows PC, Android APK và iOS iPhone.">
+    <link rel="icon" href="logo.jpg" type="image/jpeg">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #d4af37;
+            --primary-glow: rgba(212, 175, 55, 0.4);
+            --secondary: #e63946;
+            --accent-cyan: #00d2ff;
+            --accent-green: #10b981;
+            --bg-dark: #07090e;
+            --bg-card: rgba(18, 22, 34, 0.88);
+            --border-gold: rgba(212, 175, 55, 0.35);
+            --text-light: #f3f4f6;
+            --text-gold: #f9d776;
+            --text-dim: #9ca3af;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            overflow-x: hidden;
+            background-image: radial-gradient(circle at 50% 20%, rgba(212, 175, 55, 0.08) 0%, transparent 60%);
+        }
+
+        /* Ambient Canvas */
+        #sparks-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* Top Announcement */
+        .announcement-bar {
+            background: linear-gradient(90deg, #991b1b, #b45309, #991b1b);
+            color: #fff;
+            padding: 10px 15px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-align: center;
+            border-bottom: 1px solid var(--primary);
+            position: relative;
+            z-index: 10;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+        .announcement-bar a {
+            color: #fef08a;
+            text-decoration: underline;
+            margin-left: 5px;
+        }
+
+        /* Navigation */
+        .navbar {
+            background: rgba(10, 14, 23, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-gold);
+            padding: 14px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+        .nav-logo img {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            border: 2px solid var(--primary);
+            box-shadow: 0 0 12px var(--primary-glow);
+            object-fit: cover;
+        }
+        .nav-logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+        .nav-logo-text h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.5rem;
+            color: var(--text-gold);
+            letter-spacing: 1px;
+            text-shadow: 0 0 10px var(--primary-glow);
+            line-height: 1.1;
+        }
+        .nav-logo-text span {
+            font-size: 0.75rem;
+            color: var(--text-dim);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            list-style: none;
+        }
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.25s ease;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .nav-links a:hover {
+            color: var(--primary);
+            text-shadow: 0 0 8px var(--primary-glow);
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .btn-nav-login {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #fff;
+            padding: 8px 18px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .btn-nav-login:hover {
+            background: rgba(255, 255, 255, 0.16);
+            border-color: #fff;
+        }
+        .btn-nav-reg {
+            background: linear-gradient(135deg, #b45309 0%, #d97706 50%, #f59e0b 100%);
+            border: 1px solid var(--primary);
+            color: #fff;
+            padding: 8px 20px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(217, 119, 6, 0.4);
+            transition: all 0.25s;
+        }
+        .btn-nav-reg:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(245, 158, 11, 0.6);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            position: relative;
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 20px;
+            background: linear-gradient(180deg, rgba(7, 9, 14, 0.4) 0%, rgba(7, 9, 14, 0.95) 100%),
+                        url('banner.jpg') no-repeat center top / cover;
+            text-align: center;
+            overflow: hidden;
+            z-index: 2;
+        }
+
+        .hero-content {
+            max-width: 950px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 3;
+        }
+
+        .server-status-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(16, 185, 129, 0.15);
+            border: 1px solid var(--accent-green);
+            color: #34d399;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            box-shadow: 0 0 15px rgba(16, 185, 129, 0.3);
+        }
+        .status-dot {
+            width: 10px;
+            height: 10px;
+            background: #10b981;
+            border-radius: 50%;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse-dot 1.8s infinite;
+        }
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.3); }
+        }
+
+        .hero-title {
+            font-family: 'Cinzel', serif;
+            font-size: 3.8rem;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            line-height: 1.15;
+            margin-bottom: 15px;
+            background: linear-gradient(180deg, #ffffff 20%, #f9d776 70%, #d4af37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 4px 15px rgba(0,0,0,0.8));
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: #e5e7eb;
+            margin-bottom: 35px;
+            font-weight: 500;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.9);
+            line-height: 1.6;
+        }
+
+        .hero-cta-group {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 18px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .btn-cta {
+            padding: 16px 32px;
+            border-radius: 12px;
+            font-weight: 800;
+            font-size: 1.05rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.25s ease;
+            cursor: pointer;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+        }
+        .btn-cta-gold {
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 50%, #b45309 100%);
+            color: #fff;
+            border: 1px solid #fbbf24;
+        }
+        .btn-cta-gold:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 12px 30px rgba(245, 158, 11, 0.5);
+        }
+
+        .btn-cta-cyan {
+            background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+            color: #fff;
+            border: 1px solid #38bdf8;
+        }
+        .btn-cta-cyan:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 12px 30px rgba(2, 132, 199, 0.5);
+        }
+
+        .btn-cta-green {
+            background: linear-gradient(135deg, #059669 0%, #047857 100%);
+            color: #fff;
+            border: 1px solid #34d399;
+        }
+        .btn-cta-green:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 12px 30px rgba(5, 150, 105, 0.5);
+        }
+
+        /* Server Quick Stats */
+        .server-stats-strip {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            max-width: 850px;
+            margin: 0 auto;
+            background: rgba(15, 20, 32, 0.7);
+            border: 1px solid var(--border-gold);
+            padding: 18px 25px;
+            border-radius: 14px;
+            backdrop-filter: blur(8px);
+        }
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .stat-num {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--text-gold);
+        }
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Section Container */
+        .section-wrap {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .section-tag {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--primary);
+            font-weight: 700;
+            margin-bottom: 8px;
+            display: block;
+        }
+        .section-title {
+            font-family: 'Cinzel', serif;
+            font-size: 2.4rem;
+            color: #fff;
+            margin-bottom: 12px;
+        }
+        .section-divider {
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--primary), transparent);
+            margin: 0 auto;
+        }
+
+        /* Feature Cards */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+        }
+        .feature-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 30px 24px;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--primary), transparent);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .feature-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--border-gold);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+        }
+        .feature-card:hover::before {
+            opacity: 1;
+        }
+        .feature-icon {
+            width: 65px;
+            height: 65px;
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid var(--border-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: var(--text-gold);
+            margin: 0 auto 20px;
+            transition: all 0.3s;
+        }
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1) rotate(5deg);
+            background: var(--primary);
+            color: #000;
+        }
+        .feature-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+            color: #fff;
+        }
+        .feature-card p {
+            font-size: 0.9rem;
+            color: var(--text-dim);
+            line-height: 1.6;
+        }
+
+        /* Platform Download Showcase */
+        .download-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+        .dl-card {
+            background: linear-gradient(145deg, rgba(20, 26, 40, 0.95), rgba(12, 16, 26, 0.95));
+            border: 1px solid var(--border-gold);
+            border-radius: 20px;
+            padding: 35px 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .dl-icon {
+            font-size: 3.2rem;
+            margin-bottom: 15px;
+        }
+        .dl-card h3 {
+            font-size: 1.5rem;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+        .dl-card p {
+            color: var(--text-dim);
+            font-size: 0.9rem;
+            margin-bottom: 25px;
+            line-height: 1.5;
+        }
+        .dl-btn {
+            background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+            color: #fff;
+            padding: 14px 24px;
+            border-radius: 10px;
+            font-weight: 700;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            border: 1px solid var(--primary);
+            transition: all 0.25s;
+        }
+        .dl-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(217, 119, 6, 0.4);
+        }
+
+        /* 10 Sects Section */
+        .sects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .sect-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-light);
+            padding: 12px 6px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-align: center;
+        }
+        .sect-btn.active, .sect-btn:hover {
+            background: linear-gradient(135deg, #b45309, #d97706);
+            border-color: var(--primary);
+            color: #fff;
+            transform: scale(1.05);
+        }
+        .sect-detail-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border-gold);
+            border-radius: 16px;
+            padding: 30px;
+            display: flex;
+            gap: 30px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .sect-detail-info {
+            flex: 1;
+            min-width: 280px;
+        }
+        .sect-detail-info h3 {
+            font-size: 1.8rem;
+            color: var(--text-gold);
+            margin-bottom: 10px;
+        }
+        .sect-detail-info p {
+            color: #d1d5db;
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        /* Direct Register Banner */
+        .reg-banner-wrap {
+            background: linear-gradient(135deg, rgba(30, 20, 15, 0.95) 0%, rgba(15, 20, 35, 0.95) 100%);
+            border: 2px solid var(--primary);
+            border-radius: 20px;
+            padding: 45px 35px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.7);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        .reg-banner-info {
+            flex: 1;
+            min-width: 300px;
+        }
+        .reg-banner-info h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 2.2rem;
+            color: var(--text-gold);
+            margin-bottom: 10px;
+        }
+        .reg-banner-info p {
+            color: #e5e7eb;
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+
+        /* Modal Styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(10px);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            padding: 20px;
+        }
+        .modal-box {
+            background: #111622;
+            border: 2px solid var(--primary);
+            border-radius: 18px;
+            width: 100%;
+            max-width: 480px;
+            padding: 35px 30px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.9);
+            position: relative;
+            animation: modalFadeIn 0.3s ease;
+        }
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: translateY(-20px) scale(0.95); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 18px;
+            font-size: 1.4rem;
+            color: #9ca3af;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+        .modal-close:hover {
+            color: #fff;
+        }
+        .modal-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.8rem;
+            color: var(--text-gold);
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        .form-group {
+            margin-bottom: 18px;
+        }
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #d1d5db;
+            margin-bottom: 6px;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 12px 15px;
+            background: #1a2233;
+            border: 1px solid #374151;
+            border-radius: 8px;
+            color: #fff;
+            font-size: 0.95rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        .form-group input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 8px var(--primary-glow);
+        }
+        .btn-submit {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+            border: 1px solid #34d399;
+            color: #fff;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 1.05rem;
+            cursor: pointer;
+            transition: all 0.25s;
+            margin-top: 10px;
+        }
+        .btn-submit:hover {
+            transform: scale(1.02);
+            box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+        }
+        .modal-msg {
+            margin-top: 15px;
+            text-align: center;
+            font-size: 0.95rem;
+            font-weight: 600;
+            min-height: 24px;
+        }
+
+        /* Footer */
+        .footer {
+            background: #05070a;
+            border-top: 1px solid var(--border-gold);
+            padding: 50px 20px 30px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+        .footer-logo {
+            font-family: 'Cinzel', serif;
+            font-size: 1.8rem;
+            color: var(--text-gold);
+            margin-bottom: 12px;
+        }
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            list-style: none;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+        .footer-links a {
+            color: var(--text-dim);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+        .footer-copy {
+            color: #6b7280;
+            font-size: 0.8rem;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .navbar { padding: 12px 20px; }
+            .nav-links { display: none; }
+            .hero-title { font-size: 2.3rem; }
+            .hero-subtitle { font-size: 1rem; }
+            .btn-cta { width: 100%; justify-content: center; }
+            .reg-banner-wrap { flex-direction: column; text-align: center; }
+        }
+    </style>
 </head>
 <body>
-  <div style="background: linear-gradient(90deg, #1e3a8a, #0b0f19, #0284c7); color: #fff; text-align: center; padding: 10px 15px; font-size: 0.95rem; border-bottom: 1px solid #38bdf8;">
-    ⚔️ <b>CỔNG GAME VÕ LÂM 2 - JX2 FCMA:</b> Đã hỗ trợ chơi trực tiếp trên iPhone (iOS) &amp; Android! 
-    <a href="mobile.html" style="color: #f5c518; text-decoration: underline; font-weight: bold; margin-left: 8px;">Xem hướng dẫn &amp; tải game ngay &rarr;</a>
-  </div>
-  <!-- Sticky header -->
-  <header>
-    <div class="container nav-wrap">
-      <a class="brand" href="#top" aria-label="Trang chủ Cầm Đồ Trần Vũ">
-        <img class="brand-logo" src="logo.png" alt="Logo Cầm Đồ Trần Vũ" loading="eager" onerror="this.style.display='none'" />
-        <span class="brand-text">Cầm Đồ Trần Vũ</span>
-      </a>
-      <nav>
-        <a href="#tham-khao">Tham khảo</a>
-        <a href="#uoc-tinh">Ước tính vay</a>
-        <a href="#ho-so">Hồ sơ</a>
-        <a href="#dang-ky">Đăng ký</a>
-        <a href="#lien-he">Liên hệ</a>
-        <a href="mobile.html" style="color: #d4af37; font-weight: 800; background: rgba(212, 175, 55, 0.15); padding: 6px 12px; border-radius: 8px; border: 1px solid #d4af37;">⚔️ JX2 FCMA Mobile</a>
-      </nav>
+    <canvas id="sparks-canvas"></canvas>
+
+    <!-- Top Announcement Bar -->
+    <div class="announcement-bar">
+        <span>🔥 <b>MÁY CHỦ JX2 FCMA CHÍNH THỨC OPEN BETA</b> - Tặng ngay 9.999.999 Xu & Lệnh bài GM cho tân thủ!</span>
+        <a href="#download"><i class="fa-solid fa-download"></i> Tải Game Ngay</a>
     </div>
-  </header>
 
-  <main id="top">
-    <!-- 1) Hero -->
-    <section class="hero">
-      <div class="container hero-grid">
-        <div>
-          <h1>Giải Ngân Nhanh – Định Giá Minh Bạch – Hỗ Trợ Linh Hoạt</h1>
-          <p>Hỗ trợ định giá từ 20% – 50% giá trị tài sản (tuỳ loại &amp; tình trạng thực tế)</p>
+    <!-- Navigation -->
+    <header class="navbar">
+        <a href="#" class="nav-logo">
+            <img src="logo.jpg" alt="JX2 FCMA Logo">
+            <div class="nav-logo-text">
+                <h1>JX2 FCMA</h1>
+                <span>Võ Lâm Truyền Kỳ 2</span>
+            </div>
+        </a>
 
-          <ul class="badge-list" aria-label="Điểm nổi bật">
-            <li>✔ Không phí ẩn</li>
-            <li>✔ Hợp đồng rõ ràng</li>
-            <li>✔ Bảo mật thông tin</li>
-            <li>✔ Giải ngân trong ngày</li>
-          </ul>
+        <ul class="nav-links">
+            <li><a href="#"><i class="fa-solid fa-house"></i> Trang Chủ</a></li>
+            <li><a href="#news"><i class="fa-solid fa-newspaper"></i> Tin Tức</a></li>
+            <li><a href="#sects"><i class="fa-solid fa-shield-halved"></i> Môn Phái</a></li>
+            <li><a href="#download"><i class="fa-solid fa-cloud-arrow-down"></i> Tải Game</a></li>
+            <li><a href="mobile.html"><i class="fa-solid fa-mobile-screen"></i> Bản Di Động</a></li>
+            <li><a href="#" onclick="openModal('regModal')"><i class="fa-solid fa-coins"></i> Nhận 9.9M Xu</a></li>
+        </ul>
 
-          <div class="hero-cta">
-            <a class="btn btn-primary" href="tel:0362 168 238">Gọi Thẩm Định Ngay</a>
-            <a class="btn btn-secondary" href="https://zalo.me/0362168238" target="_blank" rel="noopener">Chat Zalo</a>
-          </div>
+        <div class="nav-actions">
+            <button class="btn-nav-login" onclick="openModal('loginModal')"><i class="fa-solid fa-user"></i> Đăng Nhập</button>
+            <button class="btn-nav-reg" onclick="openModal('regModal')"><i class="fa-solid fa-user-plus"></i> Đăng Ký</button>
         </div>
+    </header>
 
-        <aside class="hero-side">
-          <h3>Liên hệ nhanh</h3>
-          <p>Hotline: <a href="tel:0362 168 238">0362 168 238</a></p>
-          <p>Zalo: <a href="https://zalo.me/0362168238" target="_blank" rel="noopener">0362 168 238</a></p>
-          <p>Email: <a href="mailto:anh83863939@gmail.com">anh83863939@gmail.com</a></p>
-          <p>Facebook: <a href="https://www.facebook.com/profile.php?id=61588051783753" target="_blank" rel="noopener">Trang chính thức</a></p>
-        </aside>
-      </div>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <div class="server-status-pill">
+                <span class="status-dot"></span>
+                <span>MÁY CHỦ ONLINE INTERNET: <b>118.69.240.5</b> | CỔNG 32489 & 6666</span>
+            </div>
+
+            <h1 class="hero-title">VÕ LÂM TRUYỀN KỲ 2<br>JX2 FCMA HOÀNG KIM</h1>
+            <p class="hero-subtitle">
+                Tái hiện ký ức bôn tẩu giang hồ thời kỳ đỉnh cao. Chuẩn cày cuốc, PK Tống Liêu rực lửa,<br>
+                hỗ trợ đa nền tảng mượt mà trên <b>Windows PC, Android (.APK) và iOS iPhone</b>!
+            </p>
+
+            <div class="hero-cta-group">
+                <a href="#download" class="btn-cta btn-cta-gold">
+                    <i class="fa-solid fa-download"></i> TẢI GAME NGAY
+                </a>
+                <button onclick="openModal('regModal')" class="btn-cta btn-cta-green">
+                    <i class="fa-solid fa-gift"></i> ĐĂNG KÝ TẶNG 9.9M XU
+                </button>
+                <a href="mobile.html" class="btn-cta btn-cta-cyan">
+                    <i class="fa-solid fa-mobile-screen-button"></i> HƯỚNG DẪN DI ĐỘNG
+                </a>
+            </div>
+
+            <!-- Server Quick Stats -->
+            <div class="server-stats-strip">
+                <div class="stat-item">
+                    <span class="stat-num">338</span>
+                    <span class="stat-label">Bản Đồ Mở Rộng</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num">10</span>
+                    <span class="stat-label">Đại Môn Phái</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num">60 FPS</span>
+                    <span class="stat-label">Độ Mượt Di Động</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num">100%</span>
+                    <span class="stat-label">Miễn Phí Vĩnh Viễn</span>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <!-- 2) Bảng ví dụ tham khảo -->
-    <section id="tham-khao" class="reveal">
-      <div class="container">
-        <h2>Bảng Ví Dụ Tham Khảo</h2>
-        <p class="section-subtitle">Các số liệu dưới đây giúp bạn hình dung khoản vay theo từng nhóm tài sản.</p>
-
-        <div class="tabs" role="tablist" aria-label="Tài sản tham khảo">
-          <button class="tab-btn active" role="tab" data-tab="iphone">iPhone</button>
-          <button class="tab-btn" role="tab" data-tab="xemay">Xe Máy</button>
-          <button class="tab-btn" role="tab" data-tab="oto">Ô Tô</button>
-          <button class="tab-btn" role="tab" data-tab="sodo">Sổ Đỏ / Nhà Đất</button>
+    <!-- Direct Quick Register Section -->
+    <section class="section-wrap">
+        <div class="reg-banner-wrap">
+            <div class="reg-banner-info">
+                <span style="color:var(--primary); font-weight:700; text-transform:uppercase; letter-spacing:2px; font-size:0.85rem;">Gia Nhập Giang Hồ</span>
+                <h2>Khởi Tạo Nhân Vật & Nhận Quà Tân Thủ</h2>
+                <p>Đăng ký tài khoản ngay hôm nay để nhận ngay <b>9.999.999 Xu</b> cùng Lệnh Bài GM quản lý nhân vật toàn năng trong máy chủ JX2 FCMA.</p>
+            </div>
+            <div>
+                <button onclick="openModal('regModal')" class="btn-cta btn-cta-gold" style="font-size:1.15rem; padding:18px 40px;">
+                    <i class="fa-solid fa-dragon"></i> TẠO TÀI KHOẢN NGAY
+                </button>
+            </div>
         </div>
-
-        <div class="card">
-          <div class="tab-panel active" id="iphone">
-            <div class="example-grid">
-              <article class="example-item">
-                <h3>iPhone 13 (10 triệu)</h3>
-                <p>Nhận: <strong>2 – 5 triệu</strong></p>
-                <p>Lãi: <strong>2.5 – 3%/tháng</strong></p>
-              </article>
-              <article class="example-item">
-                <h3>iPhone 14 Pro (20 triệu)</h3>
-                <p>Nhận: <strong>4 – 10 triệu</strong></p>
-                <p>Lãi: <strong>2.5 – 3%/tháng</strong></p>
-              </article>
-            </div>
-          </div>
-
-          <div class="tab-panel" id="xemay">
-            <div class="example-grid">
-              <article class="example-item">
-                <h3>Honda SH 150 (90 triệu)</h3>
-                <p>Nhận: <strong>18 – 45 triệu</strong></p>
-                <p>Lãi: <strong>2 – 2.8%/tháng</strong></p>
-              </article>
-              <article class="example-item">
-                <h3>Yamaha Exciter (50 triệu)</h3>
-                <p>Nhận: <strong>10 – 25 triệu</strong></p>
-                <p>Lãi: <strong>2 – 3%/tháng</strong></p>
-              </article>
-            </div>
-          </div>
-
-          <div class="tab-panel" id="oto">
-            <div class="example-grid">
-              <article class="example-item">
-                <h3>Toyota Vios 2019 (350 triệu)</h3>
-                <p>Nhận: <strong>70 – 175 triệu</strong></p>
-                <p>Lãi: <strong>1.5 – 2%/tháng</strong></p>
-              </article>
-              <article class="example-item">
-                <h3>Kia Cerato 2020 (500 triệu)</h3>
-                <p>Nhận: <strong>100 – 250 triệu</strong></p>
-                <p>Lãi: <strong>1.5 – 2%/tháng</strong></p>
-              </article>
-            </div>
-          </div>
-
-          <div class="tab-panel" id="sodo">
-            <div class="example-grid">
-              <article class="example-item">
-                <h3>Nhà 2 tỷ</h3>
-                <p>Nhận: <strong>400 triệu – 1 tỷ</strong></p>
-                <p>Lãi: <strong>Theo hồ sơ</strong></p>
-              </article>
-              <article class="example-item">
-                <h3>Đất nền 1.2 tỷ</h3>
-                <p>Nhận: <strong>240 – 600 triệu</strong></p>
-                <p>Lãi: <strong>Theo hồ sơ</strong></p>
-              </article>
-            </div>
-          </div>
-
-          <p class="tiny-note">Số liệu minh hoạ – liên hệ để được thẩm định chính xác.</p>
-        </div>
-      </div>
     </section>
 
-    <!-- 3) Công cụ tính -->
-    <section id="uoc-tinh" class="reveal" style="background: var(--light);">
-      <div class="container">
-        <h2>Công Cụ Tính Ước Tính Khoản Vay</h2>
-        <p class="section-subtitle">Nhập nhanh thông tin để xem mức nhận dự kiến và tổng thanh toán.</p>
-
-        <div class="calc-grid">
-          <form class="card" id="loan-form">
-            <div class="field-group">
-              <label for="assetValue">Giá trị tài sản (VNĐ)</label>
-              <input id="assetValue" type="number" min="0" value="10000000" required />
-            </div>
-            <div class="field-group">
-              <label for="ratio">Chọn tỷ lệ (20% – 50%)</label>
-              <select id="ratio">
-                <option value="20">20%</option>
-                <option value="30">30%</option>
-                <option value="40">40%</option>
-                <option value="50" selected>50%</option>
-              </select>
-            </div>
-            <div class="field-group">
-              <label for="months">Số tháng vay</label>
-              <input id="months" type="number" min="1" value="3" required />
-            </div>
-            <div class="field-group">
-              <label for="rate">Lãi suất (%/tháng)</label>
-              <input id="rate" type="number" step="0.1" min="0" value="2.5" required />
-            </div>
-            <button type="button" class="btn btn-primary" id="openQuoteModal">Nhận báo giá chi tiết</button>
-          </form>
-
-          <div class="result-box">
-            <h3>Kết quả ước tính</h3>
-            <p><span>Số tiền có thể nhận:</span> <strong id="loanAmount">0 VNĐ</strong></p>
-            <p><span>Lãi dự kiến:</span> <strong id="interestAmount">0 VNĐ</strong></p>
-            <p><span>Tổng thanh toán:</span> <strong id="totalAmount">0 VNĐ</strong></p>
-            <small>*Kết quả chỉ mang tính tham khảo, chưa bao gồm yếu tố hồ sơ thực tế.</small>
-          </div>
+    <!-- Platform Download Center -->
+    <section id="download" class="section-wrap">
+        <div class="section-header">
+            <span class="section-tag">Đa Nền Tảng Hỗ Trợ</span>
+            <h2 class="section-title">TRUNG TÂM TẢI GAME JX2 FCMA</h2>
+            <div class="section-divider"></div>
         </div>
-      </div>
+
+        <div class="download-grid">
+            <!-- Windows PC -->
+            <div class="dl-card">
+                <div>
+                    <div class="dl-icon" style="color:#38bdf8;"><i class="fa-brands fa-windows"></i></div>
+                    <h3>Bản Máy Tính (Windows)</h3>
+                    <p>Trải nghiệm chuẩn đồ họa nguyên bản JX2 PC, hỗ trợ phím tắt Auto, màn hình Full HD sắc nét, vào game 1-Click cực nhanh.</p>
+                </div>
+                <a href="https://famcuaminha.indevs.in/download/FCMA.zip" class="dl-btn" style="background: linear-gradient(135deg, #0284c7, #0369a1); border-color:#38bdf8;">
+                    <i class="fa-solid fa-download"></i> Tải Client PC (.ZIP)
+                </a>
+            </div>
+
+            <!-- Android APK -->
+            <div class="dl-card">
+                <div>
+                    <div class="dl-icon" style="color:#10b981;"><i class="fa-brands fa-android"></i></div>
+                    <h3>Bản Điện Thoại Android (.APK)</h3>
+                    <p>Chơi JX2 ngay trên smartphone Android qua trình giả lập Winlator kèm bộ phím ảo Kiếm Hiệp độc quyền (Analog 360, phím chiêu 1-3, F1-F2).</p>
+                </div>
+                <a href="mobile.html#android" class="dl-btn" style="background: linear-gradient(135deg, #059669, #047857); border-color:#34d399;">
+                    <i class="fa-solid fa-gamepad"></i> Hướng Dẫn & Tải Phím Ảo
+                </a>
+            </div>
+
+            <!-- Apple iOS -->
+            <div class="dl-card">
+                <div>
+                    <div class="dl-icon" style="color:#f59e0b;"><i class="fa-brands fa-apple"></i></div>
+                    <h3>Bản iPhone / iPad (iOS)</h3>
+                    <p>Chiến game mượt mà 60 FPS qua app Moonlight chính thức từ App Store hoặc chơi trực tiếp trên trình duyệt Safari PWA không cần cài app.</p>
+                </div>
+                <a href="mobile.html#ios" class="dl-btn" style="background: linear-gradient(135deg, #d97706, #b45309); border-color:#fbbf24;">
+                    <i class="fa-solid fa-mobile-screen"></i> Hướng Dẫn Chơi Trên iPhone
+                </a>
+            </div>
+        </div>
     </section>
 
-    <!-- 4) So sánh -->
-    <section class="reveal">
-      <div class="container">
-        <h2>So Sánh Minh Bạch</h2>
-        <div class="compare-grid">
-          <article class="card compare-col">
-            <h3>Cầm Đồ Trần Vũ</h3>
-            <ul>
-              <li class="good">✔ Định giá rõ ràng</li>
-              <li class="good">✔ Không phí ẩn</li>
-              <li class="good">✔ Hỗ trợ gia hạn</li>
-              <li class="good">✔ Tiện ích miễn phí</li>
-              <li class="good">✔ Tư vấn trước khi ký</li>
-            </ul>
-          </article>
-          <article class="card compare-col">
-            <h3>Bên khác (tham khảo)</h3>
-            <ul>
-              <li class="bad">✘ Có thể phát sinh phí</li>
-              <li class="bad">✘ Ít hỗ trợ</li>
-              <li class="bad">✘ Thông tin không rõ</li>
-            </ul>
-          </article>
+    <!-- Sects Showcase -->
+    <section id="sects" class="section-wrap">
+        <div class="section-header">
+            <span class="section-tag">Bản Sắc Kiếm Hiệp</span>
+            <h2 class="section-title">THẬP ĐẠI MÔN PHÁI VÕ LÂM</h2>
+            <div class="section-divider"></div>
         </div>
-      </div>
+
+        <div class="sects-grid">
+            <button class="sect-btn active" onclick="showSect('thieulam')">Thiếu Lâm</button>
+            <button class="sect-btn" onclick="showSect('vodang')">Võ Đang</button>
+            <button class="sect-btn" onclick="showSect('ngamy')">Nga My</button>
+            <button class="sect-btn" onclick="showSect('duongmon')">Đường Môn</button>
+            <button class="sect-btn" onclick="showSect('caibang')">Cái Bang</button>
+            <button class="sect-btn" onclick="showSect('duongmonky')">Dương Môn</button>
+            <button class="sect-btn" onclick="showSect('ngudoc')">Ngũ Độc</button>
+            <button class="sect-btn" onclick="showSect('thuyyen')">Thúy Yên</button>
+            <button class="sect-btn" onclick="showSect('conlon')">Côn Lôn</button>
+            <button class="sect-btn" onclick="showSect('minhgiao')">Minh Giáo</button>
+        </div>
+
+        <div id="sect-detail" class="sect-detail-box">
+            <div class="sect-detail-info">
+                <h3 id="sect-name"><i class="fa-solid fa-staff"></i> THIẾU LÂM TỰ</h3>
+                <p id="sect-desc">Bắc Đẩu Thái Sơn của võ lâm Trung Nguyên. Nổi danh thiên hạ với Phật Môn La Hán Trận, Dịch Cân Kinh, Kim Cang Bất Hoại Thể. Chia làm hai hướng võ học: Thiếu Lâm Quyền (nội công áp chế) và Thiếu Lâm Trượng/Đao (ngoại công cuồng bạo).</p>
+            </div>
+        </div>
     </section>
 
-    <!-- 5) Hồ sơ chuẩn bị -->
-    <section id="ho-so" class="reveal" style="background: var(--light);">
-      <div class="container">
-        <h2>Hồ Sơ Cần Chuẩn Bị</h2>
-        <div class="docs-grid">
-          <article class="card">
-            <span class="chip">Điện thoại</span>
-            <ul>
-              <li>CCCD</li>
-              <li>Thiết bị</li>
-              <li>Đăng xuất tài khoản</li>
-            </ul>
-          </article>
-          <article class="card">
-            <span class="chip">Xe máy</span>
-            <ul>
-              <li>CCCD</li>
-              <li>Đăng ký xe</li>
-              <li>Chìa khoá</li>
-            </ul>
-          </article>
-          <article class="card">
-            <span class="chip">Ô tô</span>
-            <ul>
-              <li>CCCD</li>
-              <li>Đăng ký</li>
-              <li>Đăng kiểm</li>
-            </ul>
-          </article>
-          <article class="card">
-            <span class="chip">Sổ đỏ</span>
-            <ul>
-              <li>CCCD</li>
-              <li>Sổ đỏ</li>
-              <li>Hồ sơ pháp lý liên quan</li>
-            </ul>
-          </article>
+    <!-- News & Events -->
+    <section id="news" class="section-wrap">
+        <div class="section-header">
+            <span class="section-tag">Bảng Tin Giang Hồ</span>
+            <h2 class="section-title">TIN TỨC & SỰ KIỆN NÓNG HỔI</h2>
+            <div class="section-divider"></div>
         </div>
-      </div>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fa-solid fa-bullhorn"></i></div>
+                <h3>Khai Mở Open Beta JX2 FCMA</h3>
+                <p>Chính thức phát lệnh bôn tẩu giang hồ phiên bản chuẩn 2026. Tặng 9.999.999 Xu và Lệnh Bài Quản Trị GM cho toàn bộ nhân sĩ võ lâm.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fa-solid fa-trophy"></i></div>
+                <h3>Đua Top Lực Chiến & Cấp Độ</h3>
+                <p>Chiến trường so tài cao thấp nhận Thần Binh Hoàng Kim, Thú Cưỡi Truy Hồn và hàng ngàn bảo vật quý hiếm không bán trong Kỳ Trân Các.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fa-solid fa-swords"></i></div>
+                <h3>Đại Chiến Tống Liêu Khốc Liệt</h3>
+                <p>Hàng ngàn chiến sĩ cùng xuất kích tại Nhạn Môn Quan. Hệ thống tối ưu mạng không giật lag, thỏa sức thi thố võ công tuyệt đỉnh.</p>
+            </div>
+        </div>
     </section>
 
-    <!-- 6) Tiện ích -->
-    <section class="reveal">
-      <div class="container">
-        <h2>Tiện Ích Khách Hàng</h2>
-        <div class="utility-grid">
-          <div class="card">Cà phê miễn phí</div>
-          <div class="card">Wifi &amp; chỗ nghỉ thoáng mát</div>
-          <div class="card">Rửa xe miễn phí</div>
-          <div class="card">Camera 24/7</div>
-          <div class="card">Nhắc lịch qua Zalo</div>
-          <div class="card">Hỗ trợ linh hoạt</div>
+    <!-- Modal: Register -->
+    <div id="regModal" class="modal-overlay">
+        <div class="modal-box">
+            <span class="modal-close" onclick="closeModal('regModal')">&times;</span>
+            <h3 class="modal-title">⚔️ ĐĂNG KÝ TÀI KHOẢN</h3>
+            
+            <form id="regForm" onsubmit="handleRegister(event)">
+                <div class="form-group">
+                    <label>Tên tài khoản (viết liền, không dấu):</label>
+                    <input type="text" id="regUser" placeholder="Ví dụ: taikhoanfcma" required>
+                </div>
+                <div class="form-group">
+                    <label>Mật khẩu đăng nhập:</label>
+                    <input type="password" id="regPass" placeholder="Nhập mật khẩu..." required>
+                </div>
+                <div class="form-group">
+                    <label>Xác nhận mật khẩu:</label>
+                    <input type="password" id="regPassConfirm" placeholder="Nhập lại mật khẩu..." required>
+                </div>
+                <button type="submit" class="btn-submit">
+                    <i class="fa-solid fa-gift"></i> ĐĂNG KÝ (NHẬN 9,999,999 XU)
+                </button>
+            </form>
+            <div id="regMsg" class="modal-msg"></div>
+
+            <div style="margin-top:20px; font-size:0.85rem; color:#9ca3af; text-align:center;">
+                Hoặc đăng ký trực tiếp qua cổng máy chủ:<br>
+                <a href="http://118.69.240.5:8080/register.php" target="_blank" style="color:var(--text-gold); text-decoration:underline;">
+                    👉 http://118.69.240.5:8080/register.php
+                </a>
+            </div>
         </div>
-      </div>
-    </section>
-
-    <!-- 7) Quy trình -->
-    <section class="reveal" style="background: var(--light);">
-      <div class="container">
-        <h2>Quy Trình 3 Bước</h2>
-        <div class="steps-grid">
-          <article class="card"><span class="chip">Bước 1</span><h3>Liên hệ</h3><p>Gọi hotline hoặc chat Zalo để mô tả tài sản.</p></article>
-          <article class="card"><span class="chip">Bước 2</span><h3>Thẩm định</h3><p>Kiểm tra hồ sơ, tình trạng thực tế và đề xuất hạn mức.</p></article>
-          <article class="card"><span class="chip">Bước 3</span><h3>Ký hợp đồng &amp; giải ngân</h3><p>Thống nhất điều khoản, ký rõ ràng và nhận tiền nhanh.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <!-- 8) Form gửi thông tin -->
-    <section id="dang-ky" class="reveal">
-      <div class="container">
-        <h2>Đăng Ký Thẩm Định Nhanh</h2>
-        <p class="section-subtitle">Điền thông tin, chúng tôi sẽ liên hệ tư vấn phù hợp với nhu cầu của bạn.</p>
-
-        <form class="card" id="lead-form" action="https://formsubmit.co/anh83863939@gmail.com" method="POST">
-          <input type="hidden" name="_subject" value="Khách gửi thông tin - Cầm Đồ Trần Vũ" />
-          <input type="hidden" name="_captcha" value="false" />
-          <input type="hidden" name="_template" value="table" />
-
-          <div class="form-grid">
-            <div class="field-group">
-              <label for="fullname">Họ và tên *</label>
-              <input id="fullname" name="Họ và tên" required />
-            </div>
-            <div class="field-group">
-              <label for="phone">Số điện thoại *</label>
-              <input id="phone" name="Số điện thoại" required />
-            </div>
-
-            <div class="field-group">
-              <label for="assetType">Loại tài sản</label>
-              <select id="assetType" name="Loại tài sản">
-                <option>Điện thoại</option>
-                <option>Xe máy</option>
-                <option>Ô tô</option>
-                <option>Sổ đỏ / Nhà đất</option>
-                <option>Khác</option>
-              </select>
-            </div>
-            <div class="field-group">
-              <label for="assetPrice">Giá trị tài sản</label>
-              <input id="assetPrice" name="Giá trị tài sản" />
-            </div>
-
-            <div class="field-group">
-              <label for="loanNeed">Nhu cầu vay</label>
-              <input id="loanNeed" name="Nhu cầu vay" />
-            </div>
-            <div class="field-group">
-              <label for="area">Khu vực</label>
-              <input id="area" name="Khu vực" />
-            </div>
-
-            <div class="field-group full">
-              <label for="note">Ghi chú</label>
-              <textarea id="note" name="Ghi chú" rows="4"></textarea>
-            </div>
-
-            <label class="consent full" for="agree">
-              <input id="agree" type="checkbox" required />
-              <span>Tôi đồng ý để Cầm Đồ Trần Vũ liên hệ tư vấn theo thông tin đã cung cấp. *</span>
-            </label>
-
-            <div class="full">
-              <button class="btn btn-primary" type="submit">Gửi thông tin</button>
-            </div>
-          </div>
-
-          <div class="success-msg" id="successMsg">Gửi thông tin thành công! Cảm ơn bạn, chúng tôi sẽ liên hệ sớm.</div>
-        </form>
-      </div>
-    </section>
-
-    <!-- 9) Liên hệ -->
-    <section id="lien-he" class="reveal" style="background: var(--light);">
-      <div class="container">
-        <h2>Liên Hệ &amp; Liên Kết</h2>
-        <p class="section-subtitle">Kênh hỗ trợ chính thức của Cầm Đồ Trần Vũ.</p>
-        <div class="contact-links">
-          <a href="tel:0362 168 238">📞 Hotline: 0362 168 238</a>
-          <a href="https://zalo.me/0362168238" target="_blank" rel="noopener">💬 Zalo: 0362 168 238</a>
-          <a href="mailto:anh83863939@gmail.com">✉️ Email: anh83863939@gmail.com</a>
-          <a href="https://www.facebook.com/profile.php?id=61588051783753" target="_blank" rel="noopener">📘 Facebook chính thức</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- 11) Footer -->
-  <footer>
-    <div class="container footer-grid">
-      <div>
-        <h3>Cầm Đồ Trần Vũ</h3>
-        <p>Hotline: <a href="tel:0362 168 238">0362 168 238</a></p>
-        <p>Zalo: <a href="https://zalo.me/0362168238" target="_blank" rel="noopener">0362 168 238</a></p>
-        <p>Email: <a href="mailto:anh83863939@gmail.com">anh83863939@gmail.com</a></p>
-        <p>Facebook: <a href="https://www.facebook.com/profile.php?id=61588051783753" target="_blank" rel="noopener">Xem trang</a></p>
-        <p>Giờ mở cửa: 08:00 - 20:00 (T2 - CN)</p>
-        <p>Địa chỉ: [Đang cập nhật]</p>
-      </div>
-      <div class="map-placeholder">
-        <div>
-          <strong>Google Map placeholder</strong><br />
-          Thêm iframe Google Maps tại đây khi có địa chỉ chính xác.
-        </div>
-      </div>
     </div>
-  </footer>
 
-  <!-- 10) Floating contact buttons -->
-  <div class="floating-contact" aria-label="Liên hệ nhanh">
-    <a class="f-call" href="tel:0362 168 238" title="Gọi ngay">GỌI</a>
-    <a class="f-zalo" href="https://zalo.me/0362168238" target="_blank" rel="noopener" title="Chat Zalo">ZALO</a>
-    <a class="f-fb" href="https://www.facebook.com/profile.php?id=61588051783753" target="_blank" rel="noopener" title="Facebook">FB</a>
-    <a class="f-mail" href="mailto:anh83863939@gmail.com" title="Email">MAIL</a>
-  </div>
+    <!-- Modal: Login -->
+    <div id="loginModal" class="modal-overlay">
+        <div class="modal-box">
+            <span class="modal-close" onclick="closeModal('loginModal')">&times;</span>
+            <h3 class="modal-title">🔑 ĐĂNG NHẬP QUẢN TRỊ</h3>
+            
+            <form id="loginForm" onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <label>Tên tài khoản:</label>
+                    <input type="text" id="loginUser" placeholder="Nhập tài khoản đã đăng ký" required>
+                </div>
+                <div class="form-group">
+                    <label>Mật khẩu:</label>
+                    <input type="password" id="loginPass" placeholder="Nhập mật khẩu" required>
+                </div>
+                <button type="submit" class="btn-submit" style="background:linear-gradient(135deg, #0284c7, #0369a1); border-color:#38bdf8;">
+                    <i class="fa-solid fa-right-to-bracket"></i> ĐĂNG NHẬP
+                </button>
+            </form>
+            <div id="loginMsg" class="modal-msg"></div>
 
-  <!-- Modal báo giá -->
-  <div class="modal" id="quoteModal" aria-hidden="true">
-    <div class="modal-content">
-      <button class="modal-close" id="closeModal" aria-label="Đóng">×</button>
-      <h3>Nhận báo giá chi tiết</h3>
-      <p>Liên hệ ngay để được thẩm định chính xác theo hồ sơ và tình trạng tài sản thực tế.</p>
-      <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top: 12px;">
-        <a class="btn btn-primary" href="tel:0362 168 238">Gọi 0362 168 238</a>
-        <a class="btn" style="background:#0ea5e9;color:white;" href="https://zalo.me/0362168238" target="_blank" rel="noopener">Chat Zalo</a>
-      </div>
+            <div style="margin-top:20px; font-size:0.85rem; color:#9ca3af; text-align:center;">
+                Quản lý nhân vật & Bảng GM trực tiếp:<br>
+                <a href="http://118.69.240.5:8080/character_management.php" target="_blank" style="color:var(--text-gold); text-decoration:underline;">
+                    👉 Mở Bảng Quản Lý Nhân Vật (Port 8080)
+                </a>
+            </div>
+        </div>
     </div>
-  </div>
 
-  <script>
-    // Helper format number as VND currency
-    const formatVND = (value) => new Intl.NumberFormat('vi-VN').format(Math.round(value)) + ' VNĐ';
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-logo">⚔️ JX2 FCMA - VÕ LÂM TRUYỀN KỲ 2</div>
+        <ul class="footer-links">
+            <li><a href="#">Trang Chủ</a></li>
+            <li><a href="#news">Tin Tức</a></li>
+            <li><a href="#sects">Môn Phái</a></li>
+            <li><a href="#download">Tải Game</a></li>
+            <li><a href="mobile.html">Bản Di Động</a></li>
+            <li><a href="http://118.69.240.5:8080/character_management.php" target="_blank">Quản Lý Nhân Vật</a></li>
+        </ul>
+        <p class="footer-copy">
+            © 2026 JX2 FCMA Gaming Network. Phát triển và duy trì bởi Ban Quản Trị JX2 FCMA.<br>
+            Hệ thống máy chủ giải trí phi lợi nhuận. Toàn bộ tài nguyên thuộc bản quyền cộng đồng Võ Lâm Truyền Kỳ 2.
+        </p>
+    </footer>
 
-    // Tab logic
-    const tabButtons = document.querySelectorAll('.tab-btn');
-    const tabPanels = document.querySelectorAll('.tab-panel');
-
-    tabButtons.forEach((button) => {
-      button.addEventListener('click', () => {
-        tabButtons.forEach((b) => b.classList.remove('active'));
-        tabPanels.forEach((p) => p.classList.remove('active'));
-
-        button.classList.add('active');
-        const target = document.getElementById(button.dataset.tab);
-        if (target) target.classList.add('active');
-      });
-    });
-
-    // Loan calculator
-    const assetValue = document.getElementById('assetValue');
-    const ratio = document.getElementById('ratio');
-    const months = document.getElementById('months');
-    const rate = document.getElementById('rate');
-
-    const loanAmountEl = document.getElementById('loanAmount');
-    const interestAmountEl = document.getElementById('interestAmount');
-    const totalAmountEl = document.getElementById('totalAmount');
-
-    function calculateLoan() {
-      const asset = Number(assetValue.value) || 0;
-      const percent = (Number(ratio.value) || 0) / 100;
-      const m = Number(months.value) || 0;
-      const r = (Number(rate.value) || 0) / 100;
-
-      const principal = asset * percent;
-      const interest = principal * r * m;
-      const total = principal + interest;
-
-      loanAmountEl.textContent = formatVND(principal);
-      interestAmountEl.textContent = formatVND(interest);
-      totalAmountEl.textContent = formatVND(total);
-    }
-
-    [assetValue, ratio, months, rate].forEach((input) => {
-      input.addEventListener('input', calculateLoan);
-    });
-
-    calculateLoan();
-
-    // Modal logic
-    const quoteModal = document.getElementById('quoteModal');
-    const openModalBtn = document.getElementById('openQuoteModal');
-    const closeModalBtn = document.getElementById('closeModal');
-
-    function toggleModal(show) {
-      quoteModal.classList.toggle('open', show);
-      quoteModal.setAttribute('aria-hidden', String(!show));
-    }
-
-    openModalBtn.addEventListener('click', () => toggleModal(true));
-    closeModalBtn.addEventListener('click', () => toggleModal(false));
-    quoteModal.addEventListener('click', (event) => {
-      if (event.target === quoteModal) toggleModal(false);
-    });
-
-    // FormSubmit success hint (visual feedback)
-    const leadForm = document.getElementById('lead-form');
-    const successMsg = document.getElementById('successMsg');
-    leadForm.addEventListener('submit', () => {
-      setTimeout(() => {
-        successMsg.style.display = 'block';
-      }, 250);
-    });
-
-    // Lightweight scroll reveal animation
-    const revealEls = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('show');
-          observer.unobserve(entry.target);
+    <!-- Interactive Scripts -->
+    <script>
+        // Modal functions
+        function openModal(id) {
+            document.getElementById(id).style.display = 'flex';
         }
-      });
-    }, { threshold: 0.12 });
+        function closeModal(id) {
+            document.getElementById(id).style.display = 'none';
+        }
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal-overlay')) {
+                event.target.style.display = 'none';
+            }
+        };
 
-    revealEls.forEach((el) => observer.observe(el));
-  </script>
+        // Sect data
+        const sectData = {
+            thieulam: {
+                name: '<i class="fa-solid fa-staff"></i> THIẾU LÂM TỰ',
+                desc: 'Bắc Đẩu Thái Sơn của võ lâm Trung Nguyên. Nổi danh thiên hạ với La Hán Trận, Dịch Cân Kinh, Kim Cang Bất Hoại Thể. Phân nhánh Thiếu Lâm Quyền (nội công áp chế) và Thiếu Lâm Trượng/Đao (ngoại công cuồng bạo).'
+            },
+            vodang: {
+                name: '<i class="fa-solid fa-yin-yang"></i> VÕ ĐANG PHÁI',
+                desc: 'Đạo gia thánh địa, dĩ nhu khắc cương. Thái Cực Kiếm Pháp biến hóa khôn lường, Thái Cực Quyền bách bộ xuyên dương. Kỹ năng Bát Quái Du Long giúp tăng tốc độ di chuyển và hóa giải đòn đánh của đối thủ.'
+            },
+            ngamy: {
+                name: '<i class="fa-solid fa-feather-pointed"></i> NGA MY PHÁI',
+                desc: 'Chốn thanh tu nơi Nga My sơn cảnh. Võ công kết hợp kiếm pháp thanh tao và tiếng đàn cầm điêu luyện. Nga My Kiếm xuất chiêu biến hóa, Nga My Cầm hồi sinh đồng đội, trị liệu toàn quân.'
+            },
+            duongmon: {
+                name: '<i class="fa-solid fa-crosshairs"></i> ĐƯỜNG MÔN',
+                desc: 'Gia tộc ám khí danh bất hư truyền đất Ba Thục. Đoạt Mệnh Tiêu, Bạo Vũ Lê Hoa Châm và cơ quan cạm bẫy giết người vô hình từ khoảng cách cực xa.'
+            },
+            caibang: {
+                name: '<i class="fa-solid fa-dragon"></i> CÁI BANG',
+                desc: 'Thiên hạ đệ nhất bang phái. Sở hữu hai đại tuyệt kỹ chấn động giang hồ: Giáng Long Thập Bát Chưởng uy lực cái thế và Đả Cẩu Bổng Pháp xảo diệu vô cùng.'
+            },
+            duongmonky: {
+                name: '<i class="fa-solid fa-horse"></i> DƯƠNG MÔN',
+                desc: 'Thiên hạ trung lương danh tướng. Sở hữu thuật cưỡi ngựa thiện chiến bậc nhất: Dương Môn Thương dũng mãnh đâm xuyên trận địa và Dương Môn Cung bách bộ xuyên dương trên lưng tuấn mã.'
+            },
+            ngudoc: {
+                name: '<i class="fa-solid fa-skull"></i> NGŨ ĐỘC GIÁO',
+                desc: 'Bí ẩn vùng Miêu Cương Nam Hải. Vận dụng cổ độc và bùa chú làm suy yếu sinh lực đối thủ từ từ cho đến chết, triệu hồi tà linh bảo hộ bản thân.'
+            },
+            thuyyen: {
+                name: '<i class="fa-solid fa-water"></i> THÚY YÊN',
+                desc: 'Môn phái toàn nữ tử xinh đẹp bên bờ Điền Trì. Thủy Linh Kiếm Pháp uyển chuyển mềm mại như làn nước nhưng sát thương đoạt mạng chớp mắt.'
+            },
+            conlon: {
+                name: '<i class="fa-solid fa-bolt"></i> CÔN LÔN',
+                desc: 'Tây vực kỳ phái, ngự lôi chế địch. Lôi Động Cửu Thiên triệu hồi sấm sét oanh tạc chiến trường, Côn Lôn Đao và Côn Lôn Kiếm áp đảo diện rộng.'
+            },
+            minhgiao: {
+                name: '<i class="fa-solid fa-fire"></i> MINH GIÁO',
+                desc: 'Ngọn lửa thánh Quang Minh Đỉnh. Càn Khôn Đại Na Di thiên biến vạn hóa, Thánh Hỏa Lệnh xuất kỳ bất ý, đốt cháy mọi chướng ngại cản đường.'
+            }
+        };
+
+        function showSect(key) {
+            document.querySelectorAll('.sect-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            const sect = sectData[key];
+            if (sect) {
+                document.getElementById('sect-name').innerHTML = sect.name;
+                document.getElementById('sect-desc').innerText = sect.desc;
+            }
+        }
+
+        // Register handling
+        function handleRegister(e) {
+            e.preventDefault();
+            const u = document.getElementById('regUser').value.trim();
+            const p = document.getElementById('regPass').value;
+            const pc = document.getElementById('regPassConfirm').value;
+            const msg = document.getElementById('regMsg');
+
+            if (p !== pc) {
+                msg.style.color = '#ef4444';
+                msg.innerText = '❌ Mật khẩu xác nhận không khớp!';
+                return;
+            }
+
+            msg.style.color = '#38bdf8';
+            msg.innerText = '⏳ Đang đăng ký tài khoản [' + u + ']...';
+
+            // Gửi dữ liệu đăng ký
+            const serverUrl = 'http://118.69.240.5:8080/register.php';
+            const formData = new URLSearchParams();
+            formData.append('username', u);
+            formData.append('password', p);
+
+            fetch(serverUrl, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: formData.toString(),
+                mode: 'no-cors'
+            }).then(() => {
+                msg.style.color = '#34d399';
+                msg.innerHTML = '🎉 Đăng ký tài khoản <b>' + u + '</b> thành công!<br>Bạn đã nhận sẵn 9.999.999 Xu tân thủ!';
+                document.getElementById('regForm').reset();
+            }).catch(() => {
+                msg.style.color = '#f59e0b';
+                msg.innerHTML = 'Đã gửi yêu cầu đăng ký. Nếu chưa nhận được xu, vui lòng mở trực tiếp: <a href="http://118.69.240.5:8080/register.php" target="_blank" style="color:#fef08a;">Tại đây</a>';
+            });
+        }
+
+        // Login handling
+        function handleLogin(e) {
+            e.preventDefault();
+            const u = document.getElementById('loginUser').value.trim();
+            const msg = document.getElementById('loginMsg');
+            msg.style.color = '#34d399';
+            msg.innerHTML = '✅ Đăng nhập thành công! Đang chuyển đến Bảng Quản Trị Nhân Vật...';
+            setTimeout(() => {
+                window.open('http://118.69.240.5:8080/character_management.php?account=' + encodeURIComponent(u), '_blank');
+            }, 800);
+        }
+
+        // Background Sparks Canvas
+        const canvas = document.getElementById('sparks-canvas');
+        const ctx = canvas.getContext('2d');
+        let width = canvas.width = window.innerWidth;
+        let height = canvas.height = window.innerHeight;
+
+        window.addEventListener('resize', () => {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+        });
+
+        const particles = [];
+        for (let i = 0; i < 45; i++) {
+            particles.push({
+                x: Math.random() * width,
+                y: Math.random() * height,
+                vx: (Math.random() - 0.5) * 0.8,
+                vy: -Math.random() * 1.5 - 0.4,
+                size: Math.random() * 2.5 + 1,
+                color: Math.random() > 0.4 ? 'rgba(212, 175, 55, ' : 'rgba(255, 120, 40, ',
+                alpha: Math.random() * 0.7 + 0.2
+            });
+        }
+
+        function render() {
+            ctx.clearRect(0, 0, width, height);
+            for (let p of particles) {
+                p.x += p.vx;
+                p.y += p.vy;
+                if (p.y < -10) {
+                    p.y = height + 10;
+                    p.x = Math.random() * width;
+                }
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                ctx.fillStyle = p.color + p.alpha + ')';
+                ctx.shadowBlur = 8;
+                ctx.shadowColor = '#d4af37';
+                ctx.fill();
+            }
+            requestAnimationFrame(render);
+        }
+        render();
+    </script>
 </body>
 </html>
