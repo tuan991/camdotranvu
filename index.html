@@ -869,16 +869,16 @@
         </div>
 
         <div class="sects-grid">
-            <button class="sect-btn active" onclick="showSect('thieulam')">Thiếu Lâm</button>
-            <button class="sect-btn" onclick="showSect('vodang')">Võ Đang</button>
-            <button class="sect-btn" onclick="showSect('ngamy')">Nga My</button>
-            <button class="sect-btn" onclick="showSect('duongmon')">Đường Môn</button>
-            <button class="sect-btn" onclick="showSect('caibang')">Cái Bang</button>
-            <button class="sect-btn" onclick="showSect('duongmonky')">Dương Môn</button>
-            <button class="sect-btn" onclick="showSect('ngudoc')">Ngũ Độc</button>
-            <button class="sect-btn" onclick="showSect('thuyyen')">Thúy Yên</button>
-            <button class="sect-btn" onclick="showSect('conlon')">Côn Lôn</button>
-            <button class="sect-btn" onclick="showSect('minhgiao')">Minh Giáo</button>
+            <button class="sect-btn active" onclick="showSect('thieulam', event)">Thiếu Lâm</button>
+            <button class="sect-btn" onclick="showSect('vodang', event)">Võ Đang</button>
+            <button class="sect-btn" onclick="showSect('ngamy', event)">Nga My</button>
+            <button class="sect-btn" onclick="showSect('duongmon', event)">Đường Môn</button>
+            <button class="sect-btn" onclick="showSect('caibang', event)">Cái Bang</button>
+            <button class="sect-btn" onclick="showSect('duongmonky', event)">Dương Môn</button>
+            <button class="sect-btn" onclick="showSect('ngudoc', event)">Ngũ Độc</button>
+            <button class="sect-btn" onclick="showSect('thuyyen', event)">Thúy Yên</button>
+            <button class="sect-btn" onclick="showSect('conlon', event)">Côn Lôn</button>
+            <button class="sect-btn" onclick="showSect('minhgiao', event)">Minh Giáo</button>
         </div>
 
         <div id="sect-detail" class="sect-detail-box">
@@ -1081,9 +1081,10 @@
             }
         };
 
-        function showSect(key) {
+        function showSect(key, ev) {
             document.querySelectorAll('.sect-btn').forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
+            if (ev && ev.currentTarget) ev.currentTarget.classList.add('active');
+            else if (window.event && window.event.target) window.event.target.classList.add('active');
             const sect = sectData[key];
             if (sect) {
                 document.getElementById('sect-name').innerHTML = sect.name;
